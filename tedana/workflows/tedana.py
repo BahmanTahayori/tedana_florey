@@ -1,5 +1,5 @@
 """
-Run the "canonical" TE-Dependent ANAlysis workflow.
+Run the "canonical" TE-Dependent ANAlysis workflow. Florey
 """
 import argparse
 import datetime
