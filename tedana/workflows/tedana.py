@@ -412,7 +412,7 @@ def tedana_workflow(
         accepts and rejects some distinct components compared to kundu.
         Testing to better understand the effects of the differences is ongoing.
         Default is 'kundu'.
-    tedpca : {'mdl', 'aic', 'kic', 'kundu', 'kundu-stabilize', float}, optional
+    tedpca : {'mdl', 'aic', 'kic', 'kundu', 'kundu-stabilize', float, int}, optional
         Method with which to select components in TEDPCA.
         If a float is provided, then it is assumed to represent percentage of variance
         explained (0-1) to retain from PCA.
