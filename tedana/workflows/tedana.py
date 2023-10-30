@@ -1,6 +1,4 @@
-"""
-Run the "canonical" TE-Dependent ANAlysis workflow.
-"""
+"""Run the "canonical" TE-Dependent ANAlysis workflow."""
 import argparse
 import datetime
 import json
@@ -29,14 +27,17 @@ from tedana import (
     utils,
 )
 from tedana.bibtex import get_description_references
+from tedana.config import (
+    DEFAULT_ICA_METHOD,
+    DEFAULT_N_MAX_ITER,
+    DEFAULT_N_MAX_RESTART,
+    DEFAULT_N_ROBUST_RUNS,
+)
 from tedana.stats import computefeats2
 from tedana.workflows.parser_utils import check_tedpca_value, is_valid_file
 
-from tedana.config import (DEFAULT_ICA_METHOD,DEFAULT_N_ROBUST_RUNS, DEFAULT_N_MAX_ITER, DEFAULT_N_MAX_RESTART)
-
 LGR = logging.getLogger("GENERAL")
 RepLGR = logging.getLogger("REPORT")
-
 
 
 def _get_parser():
@@ -153,7 +154,7 @@ def _get_parser():
             "in which case the specificed number of components will be "
             "selected."
         ),
-        #choices=["mdl", "kic", "aic"],
+        # choices=["mdl", "kic", "aic"],
         default="aic",
     )
     optional.add_argument(
@@ -204,7 +205,7 @@ def _get_parser():
             "This is only effective when ica_method is "
             "set to robustica."
         ),
-        choices=range(5,500),
+        choices=range(5, 500),
         default=DEFAULT_N_ROBUST_RUNS,
     )
     optional.add_argument(
@@ -646,6 +647,9 @@ def tedana_workflow(
     fout = io_generator.save_file(data_oc, "combined img")
     LGR.info("Writing optimally combined data set: {}".format(fout))
 
+    LGR.info("TETETETETETETETETETETETETE: {}".format(tes))
+    print(tes)
+
     if mixm is None:
         # Identify and remove thermal noise from data
         dd, n_components = decomposition.tedpca(
@@ -674,10 +678,16 @@ def tedana_workflow(
         seed = fixed_seed
         while keep_restarting:
             mmix, seed = decomposition.tedica(
-                dd, n_components, seed, ica_method, n_robust_runs, maxit, maxrestart=(maxrestart - n_restarts)
+                dd,
+                n_components,
+                seed,
+                ica_method,
+                n_robust_runs,
+                maxit,
+                maxrestart=(maxrestart - n_restarts),
             )
 
-            if isinstance(seed,int):
+            if isinstance(seed, int):
                 seed += 1
             else:
                 seed = 0
@@ -713,16 +723,16 @@ def tedana_workflow(
             ica_selector = selection.automatic_selection(comptable, n_echos, n_vols, tree=tree)
             n_likely_bold_comps = ica_selector.n_likely_bold_comps
 
-          #  if ica_method=='robustica':
-          #      keep_restarting = False
-          #  else:
+            #  if ica_method=='robustica':
+            #      keep_restarting = False
+            #  else:
             if (n_restarts < maxrestart) and (n_likely_bold_comps == 0):
                 LGR.warning("No BOLD components found. Re-attempting ICA.")
             elif n_likely_bold_comps == 0:
                 LGR.warning("No BOLD components found, but maximum number of restarts reached.")
                 keep_restarting = False
             else:
-                    keep_restarting = False
+                keep_restarting = False
 
             # If we're going to restart, temporarily allow force overwrite
             if keep_restarting:
@@ -932,4 +942,3 @@ def _main(argv=None):
 
 if __name__ == "__main__":
     _main()
-
