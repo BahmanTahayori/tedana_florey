@@ -1,6 +1,4 @@
-"""
-ICA and related signal decomposition methods for tedana
-"""
+"""ICA and related signal decomposition methods for tedana"""
 import logging
 import warnings
 
@@ -93,7 +91,8 @@ def tedica(
 
 def r_ica(data, n_components, fixed_seed, n_robust_runs, max_it):
     """
-    Perform robustica on `data` by running FastICA multiple times (n_robust runes) and returns mixing matrix
+    Perform robustica on `data` by running FastICA multiple times (n_robust runes)
+    and returns mixing matrix
 
     Parameters
     ----------
@@ -166,14 +165,15 @@ def r_ica(data, n_components, fixed_seed, n_robust_runs, max_it):
 
     if iq < 0.6:
         LGR.warning(
-            "The resultant mean Index Quality is low. It  is recommended to rerun the process with a different seed."
+            "The resultant mean Index Quality is low. It  is recommended to rerun the "
+            "process with a different seed."
         )
 
     mmix = mmix[:, q["cluster_id"] >= 0]
     mmix = stats.zscore(mmix, axis=0)
 
     LGR.info(
-        "RobustICA with {0} robust runs and seed {1} was used."
+        "RobustICA with {0} robust runs and seed {1} was used. "
         "The mean Index Quality is {2}".format(n_robust_runs, fixed_seed, iq)
     )
     return mmix, fixed_seed
