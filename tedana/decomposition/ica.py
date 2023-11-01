@@ -1,8 +1,4 @@
-<<<<<<< HEAD
 """ICA and related signal decomposition methods for tedana"""
-=======
-"""ICA and related signal decomposition methods for tedana."""
->>>>>>> main
 import logging
 import warnings
 
@@ -22,7 +18,6 @@ LGR = logging.getLogger("GENERAL")
 RepLGR = logging.getLogger("REPORT")
 
 
-<<<<<<< HEAD
 def tedica(
     data,
     n_components,
@@ -187,10 +182,6 @@ def r_ica(data, n_components, fixed_seed, n_robust_runs, max_it):
 def f_ica(data, n_components, fixed_seed, maxit, maxrestart):
     """
     Perform FastICA on `data` and returns mixing matrix
-=======
-def tedica(data, n_components, fixed_seed, maxit=500, maxrestart=10):
-    """Perform ICA on ``data`` and return mixing matrix.
->>>>>>> main
 
     Parameters
     ----------
@@ -242,15 +233,16 @@ def tedica(data, n_components, fixed_seed, maxit=500, maxrestart=10):
             w = list(filter(lambda i: issubclass(i.category, UserWarning), w))
             if len(w):
                 LGR.warning(
-                    f"ICA with random seed {fixed_seed} failed to converge after {ica.n_iter_} "
-                    "iterations"
+                    "ICA with random seed {0} failed to converge after {1} "
+                    "iterations".format(fixed_seed, ica.n_iter_)
                 )
                 if i_attempt < maxrestart - 1:
                     fixed_seed += 1
-                    LGR.warning(f"Random seed updated to {fixed_seed}")
+                    LGR.warning("Random seed updated to {0}".format(fixed_seed))
             else:
                 LGR.info(
-                    f"ICA with random seed {fixed_seed} converged in {ica.n_iter_} iterations"
+                    "ICA with random seed {0} converged in {1} "
+                    "iterations".format(fixed_seed, ica.n_iter_)
                 )
                 break
 
