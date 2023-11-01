@@ -2,10 +2,92 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="188ce8a2-f25c-4be9-9047-ceaa15f285a6" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/tedana/config.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.pre-commit-config.yaml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tedana/reporting/data/html/report_info_table_template.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.circleci/config.yml" beforeDir="false" afterPath="$PROJECT_DIR$/.circleci/config.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.github/ISSUE_TEMPLATE/issue_template.md" beforeDir="false" afterPath="$PROJECT_DIR$/.github/ISSUE_TEMPLATE/issue_template.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CODE_OF_CONDUCT.md" beforeDir="false" afterPath="$PROJECT_DIR$/CODE_OF_CONDUCT.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CONTRIBUTING.md" beforeDir="false" afterPath="$PROJECT_DIR$/CONTRIBUTING.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/LICENSE" beforeDir="false" afterPath="$PROJECT_DIR$/LICENSE" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/_static/carpet_overview.png" beforeDir="false" afterPath="$PROJECT_DIR$/docs/_static/carpet_overview.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/_static/decision_tree_kundu.tex" beforeDir="false" afterPath="$PROJECT_DIR$/docs/_static/decision_tree_kundu.tex" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/_static/decision_tree_legend.tex" beforeDir="false" afterPath="$PROJECT_DIR$/docs/_static/decision_tree_legend.tex" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/_static/decision_tree_minimal.tex" beforeDir="false" afterPath="$PROJECT_DIR$/docs/_static/decision_tree_minimal.tex" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/_static/rep01_betaMap.png" beforeDir="false" afterPath="$PROJECT_DIR$/docs/_static/rep01_betaMap.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/_static/rep01_fftPlot.png" beforeDir="false" afterPath="$PROJECT_DIR$/docs/_static/rep01_fftPlot.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/_static/rep01_kappaScree.png" beforeDir="false" afterPath="$PROJECT_DIR$/docs/_static/rep01_kappaScree.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/_static/rep01_kapparhoScatter.png" beforeDir="false" afterPath="$PROJECT_DIR$/docs/_static/rep01_kapparhoScatter.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/_static/rep01_overallview.png" beforeDir="false" afterPath="$PROJECT_DIR$/docs/_static/rep01_overallview.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/_static/rep01_rhoScree.png" beforeDir="false" afterPath="$PROJECT_DIR$/docs/_static/rep01_rhoScree.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/_static/rep01_tsPlot.png" beforeDir="false" afterPath="$PROJECT_DIR$/docs/_static/rep01_tsPlot.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/_static/rep01_varexpPie.png" beforeDir="false" afterPath="$PROJECT_DIR$/docs/_static/rep01_varexpPie.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/approach.rst" beforeDir="false" afterPath="$PROJECT_DIR$/docs/approach.rst" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/building_decision_trees.rst" beforeDir="false" afterPath="$PROJECT_DIR$/docs/building_decision_trees.rst" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/faq.rst" beforeDir="false" afterPath="$PROJECT_DIR$/docs/faq.rst" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/included_decision_trees.rst" beforeDir="false" afterPath="$PROJECT_DIR$/docs/included_decision_trees.rst" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/multi-echo.rst" beforeDir="false" afterPath="$PROJECT_DIR$/docs/multi-echo.rst" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/outputs.rst" beforeDir="false" afterPath="$PROJECT_DIR$/docs/outputs.rst" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/zenodo.js" beforeDir="false" afterPath="$PROJECT_DIR$/docs/zenodo.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pyproject.toml" beforeDir="false" afterPath="$PROJECT_DIR$/pyproject.toml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tedana/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/tedana/__init__.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tedana/bibtex.py" beforeDir="false" afterPath="$PROJECT_DIR$/tedana/bibtex.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tedana/combine.py" beforeDir="false" afterPath="$PROJECT_DIR$/tedana/combine.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tedana/decay.py" beforeDir="false" afterPath="$PROJECT_DIR$/tedana/decay.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tedana/decomposition/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/tedana/decomposition/__init__.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tedana/decomposition/_utils.py" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/tedana/decomposition/ica.py" beforeDir="false" afterPath="$PROJECT_DIR$/tedana/decomposition/ica.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tedana/resources/references.bib" beforeDir="false" afterPath="$PROJECT_DIR$/tedana/resources/references.bib" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tedana/workflows/tedana.py" beforeDir="false" afterPath="$PROJECT_DIR$/tedana/workflows/tedana.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tedana/decomposition/pca.py" beforeDir="false" afterPath="$PROJECT_DIR$/tedana/decomposition/pca.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tedana/docs.py" beforeDir="false" afterPath="$PROJECT_DIR$/tedana/docs.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tedana/gscontrol.py" beforeDir="false" afterPath="$PROJECT_DIR$/tedana/gscontrol.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tedana/io.py" beforeDir="false" afterPath="$PROJECT_DIR$/tedana/io.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tedana/metrics/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/tedana/metrics/__init__.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tedana/metrics/_utils.py" beforeDir="false" afterPath="$PROJECT_DIR$/tedana/metrics/_utils.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tedana/metrics/collect.py" beforeDir="false" afterPath="$PROJECT_DIR$/tedana/metrics/collect.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tedana/metrics/dependence.py" beforeDir="false" afterPath="$PROJECT_DIR$/tedana/metrics/dependence.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tedana/reporting/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/tedana/reporting/__init__.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tedana/reporting/data/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/tedana/reporting/data/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tedana/reporting/data/html/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/tedana/reporting/data/html/__init__.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tedana/reporting/data/html/report_body_template.html" beforeDir="false" afterPath="$PROJECT_DIR$/tedana/reporting/data/html/report_body_template.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tedana/reporting/data/html/report_carpet_buttons_template.html" beforeDir="false" afterPath="$PROJECT_DIR$/tedana/reporting/data/html/report_carpet_buttons_template.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tedana/reporting/data/html/report_head_template.html" beforeDir="false" afterPath="$PROJECT_DIR$/tedana/reporting/data/html/report_head_template.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tedana/reporting/dynamic_figures.py" beforeDir="false" afterPath="$PROJECT_DIR$/tedana/reporting/dynamic_figures.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tedana/reporting/html_report.py" beforeDir="false" afterPath="$PROJECT_DIR$/tedana/reporting/html_report.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tedana/reporting/static_figures.py" beforeDir="false" afterPath="$PROJECT_DIR$/tedana/reporting/static_figures.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tedana/resources/config/metrics.json" beforeDir="false" afterPath="$PROJECT_DIR$/tedana/resources/config/metrics.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tedana/resources/config/outputs.json" beforeDir="false" afterPath="$PROJECT_DIR$/tedana/resources/config/outputs.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tedana/resources/decision_trees/kundu.json" beforeDir="false" afterPath="$PROJECT_DIR$/tedana/resources/decision_trees/kundu.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tedana/resources/decision_trees/minimal.json" beforeDir="false" afterPath="$PROJECT_DIR$/tedana/resources/decision_trees/minimal.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tedana/selection/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/tedana/selection/__init__.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tedana/selection/component_selector.py" beforeDir="false" afterPath="$PROJECT_DIR$/tedana/selection/component_selector.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tedana/selection/selection_nodes.py" beforeDir="false" afterPath="$PROJECT_DIR$/tedana/selection/selection_nodes.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tedana/selection/selection_utils.py" beforeDir="false" afterPath="$PROJECT_DIR$/tedana/selection/selection_utils.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tedana/selection/tedica.py" beforeDir="false" afterPath="$PROJECT_DIR$/tedana/selection/tedica.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tedana/selection/tedpca.py" beforeDir="false" afterPath="$PROJECT_DIR$/tedana/selection/tedpca.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tedana/stats.py" beforeDir="false" afterPath="$PROJECT_DIR$/tedana/stats.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tedana/tests/data/fiu_four_echo_outputs.txt" beforeDir="false" afterPath="$PROJECT_DIR$/tedana/tests/data/fiu_four_echo_outputs.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tedana/tests/data/nih_five_echo_outputs_verbose.txt" beforeDir="false" afterPath="$PROJECT_DIR$/tedana/tests/data/nih_five_echo_outputs_verbose.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tedana/tests/data/reclassify_debug_out.txt" beforeDir="false" afterPath="$PROJECT_DIR$/tedana/tests/data/reclassify_debug_out.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tedana/tests/data/reclassify_quiet_out.txt" beforeDir="false" afterPath="$PROJECT_DIR$/tedana/tests/data/reclassify_quiet_out.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tedana/tests/test_bibtex.py" beforeDir="false" afterPath="$PROJECT_DIR$/tedana/tests/test_bibtex.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tedana/tests/test_combine.py" beforeDir="false" afterPath="$PROJECT_DIR$/tedana/tests/test_combine.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tedana/tests/test_component_selector.py" beforeDir="false" afterPath="$PROJECT_DIR$/tedana/tests/test_component_selector.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tedana/tests/test_decay.py" beforeDir="false" afterPath="$PROJECT_DIR$/tedana/tests/test_decay.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tedana/tests/test_gscontrol.py" beforeDir="false" afterPath="$PROJECT_DIR$/tedana/tests/test_gscontrol.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tedana/tests/test_integration.py" beforeDir="false" afterPath="$PROJECT_DIR$/tedana/tests/test_integration.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tedana/tests/test_io.py" beforeDir="false" afterPath="$PROJECT_DIR$/tedana/tests/test_io.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tedana/tests/test_metrics.py" beforeDir="false" afterPath="$PROJECT_DIR$/tedana/tests/test_metrics.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tedana/tests/test_reporting.py" beforeDir="false" afterPath="$PROJECT_DIR$/tedana/tests/test_reporting.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tedana/tests/test_selection_nodes.py" beforeDir="false" afterPath="$PROJECT_DIR$/tedana/tests/test_selection_nodes.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tedana/tests/test_selection_utils.py" beforeDir="false" afterPath="$PROJECT_DIR$/tedana/tests/test_selection_utils.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tedana/tests/test_stats.py" beforeDir="false" afterPath="$PROJECT_DIR$/tedana/tests/test_stats.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tedana/tests/test_t2smap.py" beforeDir="false" afterPath="$PROJECT_DIR$/tedana/tests/test_t2smap.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tedana/tests/test_utils.py" beforeDir="false" afterPath="$PROJECT_DIR$/tedana/tests/test_utils.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tedana/tests/utils.py" beforeDir="false" afterPath="$PROJECT_DIR$/tedana/tests/utils.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tedana/utils.py" beforeDir="false" afterPath="$PROJECT_DIR$/tedana/utils.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tedana/workflows/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/tedana/workflows/__init__.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tedana/workflows/ica_reclassify.py" beforeDir="false" afterPath="$PROJECT_DIR$/tedana/workflows/ica_reclassify.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tedana/workflows/parser_utils.py" beforeDir="false" afterPath="$PROJECT_DIR$/tedana/workflows/parser_utils.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tedana/workflows/t2smap.py" beforeDir="false" afterPath="$PROJECT_DIR$/tedana/workflows/t2smap.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
