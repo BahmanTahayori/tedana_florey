@@ -91,7 +91,7 @@ def tedica(
 
 def r_ica(data, n_components, fixed_seed, n_robust_runs, max_it):
     """
-    Perform robustica on `data` by running FastICA multiple times (n_robust runes)
+    Perform robustica on `data` by running FastICA multiple times (n_robust_runs)
     and returns mixing matrix
 
     Parameters
