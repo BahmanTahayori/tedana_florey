@@ -67,7 +67,7 @@ def tedica(
 
     ica_method = ica_method.lower()
 
-    if ica_method == "robustica":
+    if ica_method == "robustica":    ##The issue with fixed seed in robustica was resolved, see https://github.com/CRG-CNAG/robustica/issues/3
         mmix, fixed_seed = r_ica(
             data,
             n_components=n_components,
@@ -91,7 +91,7 @@ def tedica(
 
 def r_ica(data, n_components, fixed_seed, n_robust_runs, max_it):
     """
-    Perform robustica on `data` by running FastICA multiple times (n_robust runes)
+    Perform robustica on `data` by running FastICA multiple times (n_robust_runs)
     and returns mixing matrix
 
     Parameters
