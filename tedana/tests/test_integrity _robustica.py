@@ -76,7 +76,7 @@ def check_integration_outputs(fname, outpath, n_logs=1):
         raise ValueError(msg)
 
 
-def data_for_testing_info(test_dataset=str):
+def data_for_testing_info(test_dataset: str):
     """
     Get the path and download link for each dataset used for testing.
 
