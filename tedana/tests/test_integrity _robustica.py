@@ -209,7 +209,7 @@ def reclassify_raw_registry() -> str:
     return os.path.join(reclassify_raw(), "desc-tedana_registry.json")
 
 
-def guarantee_reclassify_data() -> None:
+def guarantee_reclassify_data() -> str:
     """Ensures that the reclassify data exists at the expected path and return path."""
 
     test_data_path, osf_id = data_for_testing_info("three-echo-reclassify")
