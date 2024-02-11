@@ -142,7 +142,7 @@ def r_ica(data, n_components, fixed_seed, n_robust_runs, max_it):
                 rica.S_all, rica.clustering.labels_, rica.signs_, rica.orientation_
             )
 
-        except:
+        except Exception:
             continue
 
     iq = np.array(
