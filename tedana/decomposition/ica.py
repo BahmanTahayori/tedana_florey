@@ -4,8 +4,9 @@ import logging
 import warnings
 
 import numpy as np
-from robustica import RobustICA
+from robustica import RobustICA, abs_pearson_dist
 from scipy import stats
+from sklearn import manifold
 from sklearn.decomposition import FastICA
 
 from tedana.config import (
@@ -69,7 +70,7 @@ def tedica(
     ica_method = ica_method.lower()
 
     if ica_method == "robustica":
-        mmix, fixed_seed = r_ica(
+        mmix, fixed_seed, c_labels, similarity_t_sne = r_ica(
             data,
             n_components=n_components,
             fixed_seed=fixed_seed,
@@ -77,7 +78,7 @@ def tedica(
             max_it=maxit,
         )
     elif ica_method == "fastica":
-        mmix, fixed_seed = f_ica(
+        mmix, fixed_seed, c_labels, similarity_t_sne = f_ica(
             data,
             n_components=n_components,
             fixed_seed=fixed_seed,
@@ -87,7 +88,7 @@ def tedica(
     else:
         raise ValueError("The selected ICA method is invalid!")
 
-    return mmix, fixed_seed
+    return mmix, fixed_seed, c_labels, similarity_t_sne
 
 
 def r_ica(data, n_components, fixed_seed, n_robust_runs, max_it):
@@ -194,7 +195,27 @@ def r_ica(data, n_components, fixed_seed, n_robust_runs, max_it):
             f"decomposition."
         )
 
-    return mmix, fixed_seed
+    c_labels = robust_ica.clustering.labels_
+
+    perplexity = robust_ica.S_all.shape[1]
+
+    if perplexity < 81:
+        perplexity = perplexity - 1
+    else:
+        perplexity = 80
+
+    t_sne = manifold.TSNE(
+        n_components=2,
+        perplexity=perplexity,
+        init="random",
+        max_iter=2500,
+        random_state=10,
+    )
+
+    p_dissimilarity = abs_pearson_dist(robust_ica.S_all)
+    similarity_t_sne = t_sne.fit_transform(p_dissimilarity)
+
+    return mmix, fixed_seed, c_labels, similarity_t_sne
 
 
 def f_ica(data, n_components, fixed_seed, maxit, maxrestart):
@@ -264,4 +285,4 @@ def f_ica(data, n_components, fixed_seed, maxit, maxrestart):
 
     mmix = ica.mixing_
     mmix = stats.zscore(mmix, axis=0)
-    return mmix, fixed_seed
+    return mmix, fixed_seed, np.zeros((1,)), np.zeros((1,))
