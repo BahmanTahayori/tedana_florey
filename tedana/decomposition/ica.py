@@ -78,13 +78,14 @@ def tedica(
             max_it=maxit,
         )
     elif ica_method == "fastica":
-        mmix, fixed_seed, c_labels, similarity_t_sne = f_ica(
+        mmix, fixed_seed = f_ica(
             data,
             n_components=n_components,
             fixed_seed=fixed_seed,
             maxit=maxit,
             maxrestart=maxrestart,
         )
+        c_labels = similarity_t_sne = None
     else:
         raise ValueError("The selected ICA method is invalid!")
 
@@ -197,7 +198,7 @@ def r_ica(data, n_components, fixed_seed, n_robust_runs, max_it):
 
     c_labels = robust_ica.clustering.labels_
 
-    perplexity = robust_ica.S_all.shape[1]
+    perplexity = min(robust_ica.S_all.shape[1]-1, 80)
 
     if perplexity < 81:
         perplexity = perplexity - 1
@@ -285,4 +286,4 @@ def f_ica(data, n_components, fixed_seed, maxit, maxrestart):
 
     mmix = ica.mixing_
     mmix = stats.zscore(mmix, axis=0)
-    return mmix, fixed_seed, np.zeros((1,)), np.zeros((1,))
+    return mmix, fixed_seed
