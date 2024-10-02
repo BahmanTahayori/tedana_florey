@@ -11,7 +11,9 @@ import numpy as np
 
 matplotlib.use("AGG")
 import matplotlib.pyplot as plt
+from matplotlib import ticker
 from nilearn import masking, plotting
+from scipy.spatial import ConvexHull
 
 from tedana import io, stats, utils
 
@@ -798,3 +800,102 @@ def plot_adaptive_mask(
     )
     adaptive_mask_plot = f"{io_generator.prefix}adaptive_mask.svg"
     fig.savefig(os.path.join(io_generator.out_dir, "figures", adaptive_mask_plot))
+
+
+def clustering_results(cluster_labels, similarity_t_sne, io_generator):
+    """Plot the clustering results of robustica.
+
+    Parameters
+    ----------
+    cluster_labels : (n_pca_components x n_robust_runs,) : numpy.ndarray
+        A one dimensional array that has the cluster label of each run.
+    similarity_t_sne : (n_pca_components x n_robust_runs,2) : numpy.ndarray
+        An array containing the coordinates of projected data.
+    io_generator : object
+        An object containing all the information needed to generate the output.
+    """
+    title = "2D projection of clustered ICA runs using TSNE"
+    line_width = 0.6
+    marker_size = 3
+    convex_hull_color = "b--"
+    point_color = "k"
+    dilation_factor = 1.5
+
+    def plot_clusters(ax, cluster_labels, similarity_t_sne):
+
+        for ii in range(0, np.max(cluster_labels) + 1):
+            indices = cluster_labels == ii
+            cluster_points = similarity_t_sne[indices]
+            if cluster_points.shape[0] == 0:
+                continue
+            x, y = cluster_points.T
+            ax.scatter(
+                x,
+                y,
+                s=marker_size,
+                alpha=0.8,
+                color=point_color,
+                facecolors="none",
+                linewidths=line_width,
+            )
+            ax.xaxis.set_major_formatter(ticker.NullFormatter())
+            ax.yaxis.set_major_formatter(ticker.NullFormatter())
+            if cluster_points.shape[0] > 2:
+                hull = ConvexHull(cluster_points)
+                centroid = np.mean(cluster_points[hull.vertices], axis=0)
+                scaled_points = centroid + dilation_factor * (cluster_points - centroid)
+                for simplex in hull.simplices:
+                    ax.plot(
+                        scaled_points[simplex, 0],
+                        scaled_points[simplex, 1],
+                        convex_hull_color,
+                        linewidth=line_width,
+                    )
+
+    # First plot for normal clusters
+    fig, ax = plt.subplots(figsize=(9, 6), facecolor="white", constrained_layout=True)
+    fig.suptitle(title, size=16)
+    plot_clusters(ax, cluster_labels, similarity_t_sne)
+    ax.legend(["Clustered runs", "Cluster's boundary"])
+
+    plot_name = f"{io_generator.prefix}clustering_projection_tsne.png"
+    clustering_projection_tsne_name = os.path.join(io_generator.out_dir, "figures", plot_name)
+    plt.xlabel("x1")
+    plt.ylabel("x2")
+    plt.savefig(clustering_projection_tsne_name, dpi=600)
+    plt.close()
+
+    # Check for noise clusters
+    if np.min(cluster_labels) == -1:
+        fig, ax = plt.subplots(figsize=(9, 6), facecolor="white", constrained_layout=True)
+        fig.suptitle(title, size=16)
+
+        # Plot noise clusters
+        indices = cluster_labels == -1
+        cluster_points = similarity_t_sne[indices]
+        x, y = cluster_points.T
+        ax.scatter(
+            x,
+            y,
+            marker="X",
+            s=marker_size * 2,
+            alpha=0.6,
+            color="r",
+            edgecolors="none",
+            linewidths=line_width,
+        )
+
+        # Plot remaining clusters
+        plot_clusters(ax, cluster_labels, similarity_t_sne)
+
+        ax.xaxis.set_major_formatter(ticker.NullFormatter())
+        ax.yaxis.set_major_formatter(ticker.NullFormatter())
+
+        ax.legend(["Unclustered runs", "Clustered runs", "Cluster's boundary"])
+
+        plot_name = f"{io_generator.prefix}clustering_projection_tsne_with_noise.png"
+        clustering_projection_tsne_name = os.path.join(io_generator.out_dir, "figures", plot_name)
+        plt.xlabel("x1")
+        plt.ylabel("x2")
+        plt.savefig(clustering_projection_tsne_name, dpi=600)
+        plt.close()
