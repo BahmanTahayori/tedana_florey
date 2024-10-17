@@ -780,7 +780,7 @@ def tedana_workflow(
         n_restarts = 0
         seed = fixed_seed
         while keep_restarting:
-            mmix, seed = decomposition.tedica(
+            mmix, seed, cluster_labels, similarity_t_sne = decomposition.tedica(
                 dd,
                 n_components,
                 seed,
@@ -1026,6 +1026,12 @@ def tedana_workflow(
 
         dn_ts, hikts, lowkts = io.denoise_ts(data_oc, mmix, mask_denoise, comptable)
 
+        if ica_method == "robustica":
+            reporting.static_figures.clustering_results(
+                cluster_labels=cluster_labels,
+                similarity_t_sne=similarity_t_sne,
+                io_generator=io_generator,
+            )
         reporting.static_figures.plot_adaptive_mask(
             optcom=data_oc,
             base_mask=mask,
